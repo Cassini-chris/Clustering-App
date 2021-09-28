@@ -1,0 +1,93 @@
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* Rotating Icon */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+#logo {
+  border-radius: 99%;
+  -webkit-transition: -webkit-transform 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out
+}
+
+#logo:hover {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg)
+}
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ScreenSize Changes */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/*BIG-------------------------------------------------------------------------*/
+@media screen and (min-width: 809px) {
+  #heading_big {
+    padding-top: 40px
+  }
+}
+
+/*SMALL-----------------------------------------------------------------------*/
+@media screen and (max-width: 809px) {
+  #heading_big {
+    padding-top: 25px
+  }
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* DropDown Menu Style */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+select {
+  padding: 7px 40px 7px 12px;
+  width: 100%;
+  border: 1px solid #227aff;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 1px 3px -2px #9098A9;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  transition: all 1500ms ease;
+  &:required: invalid;
+  color: #5A667F
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* Progress bar*/
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+ .loader {
+   border: 16px solid #f3f3f3;
+   border-top: 16px solid #3498db;
+   border-radius: 50%;
+   width: 120px;
+   height: 120px;
+   margin-left: auto;
+   margin-right: auto;
+   animation: spin 2s linear infinite;
+ }
+
+ @keyframes spin {
+   0% {
+     transform: rotate(0deg);
+   }
+
+   100% {
+     transform: rotate(360deg);
+   }
+ }
+
+
+ /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+ /* Upload Button
+ /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+ input[type=file]::file-selector-button {
+   border: 1px solid white;
+   padding: .2em .4em;
+   border-radius: .4em;
+   background-color: #007bff;
+   transition: 1s;
+   margin: 0 0 15px 0;
+   padding:8px 12px 8px 12px;
+   color:white
+ }
+
+ input[type=file]::file-selector-button:hover {
+   background-color: #0f5aab;
+ }
