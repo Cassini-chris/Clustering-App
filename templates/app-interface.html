@@ -1,0 +1,449 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Clustering APP">
+  <meta name="author" content="Christoph Mittendorf">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>Clustering App</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Font Style-->
+  <style media="screen">body {padding-top: 56px; font-family: 'Muli', sans-serif}</style>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../static/fav/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../static/fav/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../static/fav/favicon-16x16.png">
+  <link rel="manifest" href="../static/fav/site.webmanifest">
+
+
+  <!-- Custom font -->
+  <link href="https://fonts.googleapis.com/css?family=Assistant|Cabin|Indie+Flower|Muli|Nunito&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/style.css">
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+
+      <a href="">
+        <img id="logo" style="width:30px !important; height:30px !important" src="../static/images/logo.png" alt="">
+      </a>
+      <a style="padding-left:7px" class="navbar-brand" href="">Clustering APP (BETA Version)</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/index.html">Home<span class="sr-only">(current)</span> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="about" href="#" onclick="aboutFunction()">About</a>
+            <script>
+              function aboutFunction() {alert("Developer:  Christoph Mittendorf");}
+            </script>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="bd-pageheader text-center text-sm-left" style="background-color: #00264d; height:140px; color: white">
+    <div class="container">
+      <!-- Title Content ---------------------------------------------------------------------------------------------------------->
+      <h1 id="heading_big" style="font-weight: bold">Clustering App - CSV Explorer
+        <img style="display: inline; width:80px; margin-bottom:20px" src="../static/images/logo.png" alt="YTTE">
+        <small> (Clustering App)</small>
+      </h1>
+    </div>
+  </div>
+
+
+  <!-- Page Content -->
+  <div class="container" style="padding-top:30px">
+    <div class="row">
+      <!-- Blog Entries Column -->
+      <div class="col-md-8">
+
+        <!-- ML Model Parameters ---------------------------------------------------------------------------------------------------------->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h2 class="card-title">ML Model Parameters</h2>
+            <p class="card-text"></p>
+
+            <div class="ml_parameters menu">
+              <div id="first_ml_parameter" style="float:left">
+                <p style="text-align: center" title="The number of trends that will be extracted by the ML model.">Number of Trends</p>
+                <select style="width:200px" id="first_ml_parameter_input" class="form-select" aria-label="Default select example">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10" selected>10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                </select>
+              </div>
+            </div>
+
+            <div id="second_ml_parameter" style="float:left; margin-left:25px">
+              <p style="text-align: center" title="The number of words that will describe the trend.">Number of Words</p>
+              <select style="width:200px" id="second_ml_parameter_input" class="form-select" aria-label="Default select example">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3" selected>3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+
+            <div id="third_qml_parameter" style="float:left; margin-left:25px">
+              <p style="text-align: center" title="Number of Items that will be extracted per identified trend.">Items per Trend</p>
+              <select style="width:200px" id="third_ml_parameter_input" class="form-select" aria-label="Default select example">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10" selected>10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="card-footer text-muted">
+            Please input the ml model parameters via the dropdown menus.
+          </div>
+        </div>
+
+<div>
+        <script type="text/javascript" src="../static/csv_reader.js"></script>
+
+         <input class="custom-file-upload " type="file" id="csvFileInput" onchange="handleFiles(this.files)" accept=".csv">
+
+
+<style media="screen">
+
+</style>
+</div>
+
+<button id="run_button" style="margin-bottom: 25px; display:none" type="button" class="btn btn-primary" onclick="run_model();">Run analysis</button>
+
+
+</div>
+
+      <!-- Sidebar Widgets Column -->
+      <div class="col-md-4" style="margin-top:0px; padding:0; auto !important;">
+        <div class="card my-4" style="margin-top:0px !important">
+          <h5 class="card-header">Resources</h5>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-6">
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    <a href="">More info</a>
+                  </li>
+                  <li>
+                    <a href="">EpicML</a>
+                  </li>
+                  <li>
+                    <a href="">Ml-Models.de</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    <a href="https://en.wikipedia.org/wiki/Non-negative_matrix_factorization">ML model</a>
+                  </li>
+                  <li>
+                    <a href="">Clustering APP</a>
+                  </li>
+                  <li>
+                    <a href="">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="card my-4">
+          <h5 class="card-header">ML Algorithm</h5>
+          <div class="card-body" style="padding:0">
+
+            <a href="https://en.wikipedia.org/wiki/Non-negative_matrix_factorization"> <img style="max-width:100%;max-height:100%" src="../static/images/logo.png" alt="Algorithm"></a>
+          </div>
+        </div>
+
+        <div class="card my-4" id="explanation_card">
+          <h5 class="card-header">How to use it:</h5>
+          <div class="card-body">
+
+            <p> The Clustering APP is an application that identifies Trends by running topic modelling over your CSV file.
+              The application is powered by GAE and uses Non-negative matrix factorization to perform clustering.</p>
+            <p>
+              You can set the following ML parameters:
+            <ul>
+              <li>Number of clusters (topics)</li>
+              <li>Number of words per cluster</li>
+              <li>Number of features per cluster</li>
+            </ul>
+            <p>This is an unsupervised ml approach. Hence, having back the probabilistic prediction of the ml model, we recommend to evaluate the results and extract the useful clusters.
+            <p><i>#Chris</i></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PROGRESS BAR -->
+    <div class="box" id="loader_box" style="display:none; text-align:center;height:70px; margin:100px 0 100px 0">
+      <div class="col text-center">
+        <div class="loader" id="loader" style=" text-align:center"></div>
+      </div>
+    </div>
+
+
+    <!-- Result container -->
+    <div id="result_header" style="display:none">
+
+      <div id="topics" style="padding:8px 0 2px 20px; background-Color:#00264d; color:white; border-radius: 25px;height:60px">
+        <h2 class="card-title" style=" float:left">Results</h2>
+
+        <!-- Download Button for CSV -->
+        <button id="Download" onclick="run_download()" class="btn btn-primary" style="float:right; margin-right:30px">
+          <i class="fa fa-download"></i> Download
+        </button>
+      </div>
+    </div>
+
+    <div id="result_container"></div>
+  </div>
+
+  <script>
+    //##################################################################################################
+    //Function for :Downloading CSV Array
+    //##################################################################################################
+
+    function run_download() {
+
+      let csvContent = "data:text/csv;charset=utf-8,";
+
+      response_for_download.forEach(function(rowArray) {
+        let row = rowArray.join(",");
+        csvContent += row + "\r\n";
+
+      });
+      var encodedUri = encodeURI(csvContent);
+      var link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", "yt_trends_data.csv");
+      document.body.appendChild(link); // Required for FF
+
+      link.click();
+    };
+  </script>
+
+
+  <script>
+    // Introduce message:
+    let message = "Message introduced - setting 10 as standard";
+    console.log(message);
+    message = 10;
+    var new_array_ms = [10, 10, 10];
+    var response_for_download = [];
+
+    //##################################################################################################
+    // Run Model Function
+    //##################################################################################################
+
+    function run_model() {
+
+      var l = document.getElementById("loader_box");
+      if (l.style.display === "none") {
+        l.style.display = "block";
+        document.getElementById('loader_box').scrollIntoView();
+      };
+
+      // Hide explanation card after button click
+      var explanation_card = document.getElementById("explanation_card");
+      explanation_card.style.display = "none";
+
+      // Unhide results heading
+      var topics_header = document.getElementById("topics");
+      topics_header.style.display = "block";
+
+      // Number of ML Topics to identify
+      var first_ml_parameter_input = document.getElementById("first_ml_parameter_input").value;
+      if (first_ml_parameter_input == "Number of Trends") {
+        first_ml_parameter_input = 10;
+      };
+
+      // Number of ML Topics to identify
+      var second_ml_parameter_input = document.getElementById("second_ml_parameter_input").value;
+      if (second_ml_parameter_input == "Number of Words") {
+        second_ml_parameter_input = 3;
+      };
+
+      // Number of ML Topics to identify
+      var third_ml_parameter_input = document.getElementById("third_ml_parameter_input").value;
+      if (third_ml_parameter_input == "Number of Videos per Trend") {
+        third_ml_parameter_input = 10;
+      };
+
+      first_ml_parameter_input = parseInt(first_ml_parameter_input);
+      second_ml_parameter_input = parseInt(second_ml_parameter_input);
+      third_ml_parameter_input = parseInt(third_ml_parameter_input);
+
+      new_array_ms = [first_ml_parameter_input, second_ml_parameter_input, third_ml_parameter_input, full_text]
+      console.log(new_array_ms);
+
+      //##################################################################################################
+      // Transfer Function
+      //##################################################################################################
+
+      $.post("https://ml-clustering.ew.r.appspot.com/transfer", JSON.stringify(new_array_ms), function(response) {
+
+        console.log(response);
+        console.log(response.join());
+        console.log(response[0].join());
+        console.log(response[1].join());
+
+        // length_topics = Number of TRENDS OVERALL
+        var length_topics = response[0].length;
+        // length_documents = Number of Videos OVERALL
+        var length_documents = response[1].length;
+        // no_documents = Number of Videos per TREND
+        var no_documents = third_ml_parameter_input;
+
+        var current_topic = 0;
+        var current_topic_array = [];
+        var current_document = 0;
+        var current_document_array = [];
+
+        // For Downloading CSV
+        var combined_array = [];
+
+        const myNode = document.getElementById("result_container");
+        myNode.innerHTML = '';
+
+        console.log("length_topics: ", length_topics);
+        console.log("length_documents: ", length_documents);
+
+        // Hide Loader Box
+        document.getElementById('loader_box').style.display = "none";
+        document.getElementById('result_header').style.display = "block";
+
+        for (l = current_topic; l < length_topics; l++) {
+          var dream = document.createElement("div");
+          dream.style.backgroundColor = "#007bff";
+          dream.style.marginTop = "20px";
+          dream.style.borderRadius = "10px";
+          dream.style.color = "white";
+
+          var para = document.createElement("p");
+          para.style.paddingLeft = "20px";
+          para.style.fontWeight = "bold";
+
+          var node = document.createTextNode(response[0][l]);
+
+          // For Downloading CSV
+          let str_a = "TREND ";
+          let str_b = l + 1;
+          let str_c = ": ";
+          let str_d = (response[0][l]).toString();
+          let trend_head = str_a + str_b + str_c + str_d;
+          trend_head = trend_head.toUpperCase();
+
+          combined_array.push([trend_head]);
+
+          para.appendChild(node);
+          dream.appendChild(para);
+
+          var element = document.getElementById("result_container");
+          element.appendChild(dream);
+
+          current_topic = current_topic + 1;
+          end_document = current_document + no_documents;
+
+          for (i = current_document; i < end_document; i++) {
+            var li = document.createElement("li");
+            li.style.padding = "0 0 0 20px";
+
+            var node = document.createTextNode(response[1][i]);
+
+            // Adding HREF Link to Videos
+            var a = document.createElement('a');
+            a.title = "Video Link";
+            a.appendChild(node);
+            let str1 = "https://www.youtube.com/results?search_query=";
+            let str2 = (response[1][i]).toString();
+            let res = str1.concat(str2);
+            a.href = res;
+            a.setAttribute('target', '_blank');
+
+
+            // For Downloading CSV
+            //Escape Response
+            video_string = response[1][i].toString();
+            video_string = video_string.replaceAll("#", '-');
+            combined_array.push([
+              [video_string]
+            ]);
+
+            li.appendChild(a);
+            var element = document.getElementById("result_container");
+            element.appendChild(li);
+            current_document = current_document + 1;
+
+          }
+
+          // Adding - Empty Row Between Trends
+          combined_array.push([
+            []
+          ]);
+        }
+
+        console.log("Combined_array_final:", combined_array);
+        response_for_download = combined_array;
+      });
+    };
+  </script>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark" style="margin-top:20px; bottom: 0;
+   width: 100%;">
+    <div class="container">
+      <p class="m-0 text-center text-white">Clustering-APP - 2021</p>
+    </div>
+  </footer>
+
+</body>
