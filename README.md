@@ -6,7 +6,7 @@ Please checkout:
 ## [>>> Final Application](https://ml-clustering.ew.r.appspot.com// "Clustering APP")
 
 
-![Clustering_Pic](https://xxx.jpg)
+![Clustering_Pic](https://github.com/cassini-chris/Clustering-App/blob/main/_GITHUB/readme/images/Clustering-app2.jpg?raw=true)
 
 In detail, in this project I have explored topic modeling via Non-negative matrix factorization. The Clustering APP is an application that identifies Clusters by running topic modeling over an uploaded CSV file. The application is powered by GAE and runs on Python 3.9. Although topic modeling is not new, the idea of this project is to highight Cloud technologies, predominately GCP services to make clustering tangible and accessible for everyone. In detail, to build and run the application, I only used:
 - [x] Google App Engine
