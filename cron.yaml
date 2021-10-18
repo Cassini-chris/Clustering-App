@@ -1,0 +1,4 @@
+cron:
+- description: "Keep instance on"
+  url: /DoNothing
+  schedule: every 10 minutes
