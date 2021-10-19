@@ -4,7 +4,7 @@
 Please checkout:
 
 ## [>>> Final Application](https://ml-clustering.ew.r.appspot.com// "Clustering APP")
-<img src="https://github.com/Cassini-chris/Clustering-App/blob/main/_GITHUB/readme/images/Clustering-app2.png" width="80">
+<img src="https://github.com/Cassini-chris/Clustering-App/blob/main/_GITHUB/readme/images/Clustering-app2.png" width="80%">
 
 ![Clustering_Pic](https://github.com/Cassini-chris/Clustering-App/blob/main/_GITHUB/readme/images/Clustering-app2.png?width=80)
 
