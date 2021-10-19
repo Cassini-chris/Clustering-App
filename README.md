@@ -1,4 +1,4 @@
-# Clustering-App
+# Clustering-App running on Google Cloud App Engine
 ### Topic-Modeling aka. unsupervised learning using Non-negative matrix factorization
 
 Please checkout:
