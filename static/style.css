@@ -26,7 +26,7 @@
 
 /*SMALL-----------------------------------------------------------------------*/
 @media screen and (max-width: 809px) {
-  #heading_big {
+  #heading_small {
     padding-top: 25px
   }
 }
@@ -45,8 +45,7 @@ select {
   font-family: inherit;
   font-size: 16px;
   transition: all 1500ms ease;
-  &:required: invalid;
-  color: #5A667F
+  color: #5A667F;
 }
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -90,4 +89,43 @@ select {
 
  input[type=file]::file-selector-button:hover {
    background-color: #0f5aab;
+ }
+
+ /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+ /* Snapshot Table
+ /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+ /* table, th, td { border: 0px solid black}; */
+
+ table  ,  td, th, td{
+     /* border-collapse:separate; */
+
+     /* border-radius:15px;
+     -moz-border-radius:15px; */
+     border: none;
+     border-collapse: collapse;
+     /* border-color: #fff;
+     border-top:#fff; */
+
+ }
+
+ #output_table {table-layout: fixed; width: 100%}
+
+
+ /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+ /* Footer Setup
+ /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+ body {
+   position: relative;
+   margin: 0;
+   padding-bottom: 10rem;
+   min-height: 100%;
+ }
+
+
+ footer {
+   position: absolute;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   padding: 0rem;
  }
