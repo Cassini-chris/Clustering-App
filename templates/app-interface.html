@@ -31,16 +31,20 @@
 
 <body>
 
+
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
 
-      <a href="">
+      <a href="https://ml-clustering.ew.r.appspot.com/">
         <img id="logo" style="width:30px !important; height:30px !important" src="../static/images/logo.png" alt="">
       </a>
-      <a style="padding-left:7px" class="navbar-brand" href="">Clustering APP (BETA Version)</a>
+      <a style="padding-left:7px" class="navbar-brand" href="">Clustering APP (BETA Version - powered by Google App Engine)</a>
+
+          <img id="" style="width:40px !important; height:40px !important" src="https://fonts.gstatic.com/s/i/productlogos/google_cloud/v7/192px.svg" alt="">
+              <img id="logo" style="width:40px !important; height:40px !important" src="../static/images/app_engine.png" alt="">
+              <span>)</span>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
@@ -49,21 +53,19 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" id="about" href="#" onclick="aboutFunction()">About</a>
-            <script>
-              function aboutFunction() {alert("Developer:  Christoph Mittendorf");}
-            </script>
+  <script> function aboutFunction() {alert("Developer:  Dr. Christoph Mittendorf \nLocation:  Munich, Germany \nInternet:  http://www.ml-models.de \nE-Mail:  hello@epicml.net");}</script>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="bd-pageheader text-center text-sm-left" style="background-color: #00264d; height:140px; color: white">
+  <div class="bd-pageheader text-center text-sm-left" style="background-color: #007eff; height:140px; color: white">
     <div class="container">
       <!-- Title Content ---------------------------------------------------------------------------------------------------------->
-      <h1 id="heading_big" style="font-weight: bold">Clustering App - CSV Explorer
-        <img style="display: inline; width:80px; margin-bottom:20px" src="../static/images/logo.png" alt="YTTE">
-        <small> (Clustering App)</small>
+      <h1 id="heading_big" style="font-weight: bold">Clustering App
+        <img style="width:80px; margin-bottom:20px" src="../static/images/logo.png" alt="">
+        <small> (CSV Explorer)</small>
       </h1>
     </div>
   </div>
@@ -72,86 +74,80 @@
   <!-- Page Content -->
   <div class="container" style="padding-top:30px">
     <div class="row">
-      <!-- Blog Entries Column -->
       <div class="col-md-8">
 
         <!-- ML Model Parameters ---------------------------------------------------------------------------------------------------------->
         <div class="card mb-4">
           <div class="card-body">
             <h2 class="card-title">ML Model Parameters</h2>
-            <p class="card-text"></p>
 
             <div class="ml_parameters menu">
-              <div id="first_ml_parameter" style="float:left">
-                <p style="text-align: center" title="The number of trends that will be extracted by the ML model.">Number of Trends</p>
-                <select style="width:200px" id="first_ml_parameter_input" class="form-select" aria-label="Default select example">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10" selected>10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                </select>
+              <div id="first_ml_parameter" style="float:left; margin-right:25px; margin-bottom:10px">
+                <p style="text-align: center" title="The number of clusters that will be extracted by the ML model.">Number of Clusters*</p>
+                <select style="width:200px" id="first_ml_parameter_input" class="form-select" aria-label="Default select example"> </select>
               </div>
             </div>
 
-            <div id="second_ml_parameter" style="float:left; margin-left:25px">
-              <p style="text-align: center" title="The number of words that will describe the trend.">Number of Words</p>
-              <select style="width:200px" id="second_ml_parameter_input" class="form-select" aria-label="Default select example">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3" selected>3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+            <div id="second_ml_parameter" style="float:left; margin-right:25px; margin-bottom:10px">
+              <p style="text-align: center" title="The number of words that will describe the cluster.">Number of Words**</p>
+              <select style="width:200px" id="second_ml_parameter_input" class="form-select" aria-label="Default select example"></select>
             </div>
 
-            <div id="third_qml_parameter" style="float:left; margin-left:25px">
-              <p style="text-align: center" title="Number of Items that will be extracted per identified trend.">Items per Trend</p>
-              <select style="width:200px" id="third_ml_parameter_input" class="form-select" aria-label="Default select example">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10" selected>10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-              </select>
+            <div id="third_qml_parameter" style="float:left; margin-left:0; margin-bottom:10px">
+              <p style="text-align: center" title="Number of Items that will be extracted per identified cluster.">Items per Cluster***</p>
+              <select style="width:200px" id="third_ml_parameter_input" class="form-select" aria-label="Default select example"></select>
             </div>
           </div>
 
+          <script>
+            //################################
+            //Create 100 value option dropdown
+            //################################
+            var selectClusters = document.getElementById("first_ml_parameter_input");
+            var contents;
+            //################################ First Dropdown
+              for (let i = 1; i <= 100; i++) {
+                if (i==10){contents += "<option selected>" + i + "</option>";}
+                else{contents += "<option>" + i + "</option>";}
+              };
+            selectClusters.innerHTML = contents;
+            //################################ Second Dropdown
+            var selectClusters = document.getElementById("second_ml_parameter_input");
+            contents = "";
+              for (let i = 1; i <= 100; i++) {
+                if (i==3){contents += "<option selected>" + i + "</option>";}
+                else{contents += "<option>" + i + "</option>";}
+              };
+            selectClusters.innerHTML = contents;
+            //################################ Thrid DropDown
+            contents = "";
+            selectClusters = document.getElementById("third_ml_parameter_input");
+              for (let i = 1; i <= 100; i++) {
+            if (i==10){contents += "<option selected>" + i + "</option>";}
+            else{contents += "<option>" + i + "</option>";}
+          };
+            selectClusters.innerHTML = contents;
+          </script>
+
+
           <div class="card-footer text-muted">
-            Please input the ml model parameters via the dropdown menus.
+          <span> Please input the ml model parameters via the dropdown menus.</span> </br>
+          <span style="font-size:12px">* The number of clusters that will be extracted by the ML model</span> </br>
+          <span style="font-size:12px">** The number of words that will describe the cluster</span> </br>
+          <span style="font-size:12px">*** Number of Items that will be extracted per cluster</span>
           </div>
         </div>
 
-<div>
-        <script type="text/javascript" src="../static/csv_reader.js"></script>
+        <div style="margin-bottom:10px"><a href="https://storage.googleapis.com/public-ml-data-bucket/dummy_healthcare_data.csv">Download Dummy CSV File</a> </div>
 
+
+        <div>
+         <script type="text/javascript" src="../static/csv_reader.js"></script>
          <input class="custom-file-upload " type="file" id="csvFileInput" onchange="handleFiles(this.files)" accept=".csv">
+        </div>
 
 
-<style media="screen">
-
-</style>
-</div>
+    <div id="dvCSV"></div>
 
 <button id="run_button" style="margin-bottom: 25px; display:none" type="button" class="btn btn-primary" onclick="run_model();">Run analysis</button>
 
@@ -159,7 +155,7 @@
 </div>
 
       <!-- Sidebar Widgets Column -->
-      <div class="col-md-4" style="margin-top:0px; padding:0; auto !important;">
+      <div class="col-md-4" style="margin-top:0px; padding:0">
         <div class="card my-4" style="margin-top:0px !important">
           <h5 class="card-header">Resources</h5>
           <div class="card-body">
@@ -167,26 +163,26 @@
               <div class="col-lg-6">
                 <ul class="list-unstyled mb-0">
                   <li>
-                    <a href="">More info</a>
+                    <a href="https://github.com/Cassini-chris/Clustering-App" target="_blank">GitHub repo</a>
                   </li>
                   <li>
-                    <a href="">EpicML</a>
+                    <a href="https://epicml.net/" target="_blank">EpicML.net</a>
                   </li>
                   <li>
-                    <a href="">Ml-Models.de</a>
+                    <a href="http://ml-models.de/" target="_blank">Ml-Models.de</a>
                   </li>
                 </ul>
               </div>
               <div class="col-lg-6">
                 <ul class="list-unstyled mb-0">
                   <li>
-                    <a href="https://en.wikipedia.org/wiki/Non-negative_matrix_factorization">ML model</a>
+                    <a href="https://en.wikipedia.org/wiki/Non-negative_matrix_factorization target="_blank"">NMF (wiki)</a>
                   </li>
                   <li>
-                    <a href="">Clustering APP</a>
+                    <a href="https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.NMF.html" target="_blank">NMF (soure)</a>
                   </li>
                   <li>
-                    <a href="">Contact</a>
+                    <a href="https://cloud.google.com/" target="_blank">>> Google Cloud</a>
                   </li>
                 </ul>
               </div>
@@ -195,11 +191,11 @@
         </div>
 
 
-        <div class="card my-4">
+        <div class="card my-4" id="algorithm_card">
           <h5 class="card-header">ML Algorithm</h5>
           <div class="card-body" style="padding:0">
 
-            <a href="https://en.wikipedia.org/wiki/Non-negative_matrix_factorization"> <img style="max-width:100%;max-height:100%" src="../static/images/logo.png" alt="Algorithm"></a>
+            <a href="https://en.wikipedia.org/wiki/Non-negative_matrix_factorization" target="_blank"> <img style="max-width:100%;max-height:100%" src="../static/images/topic_ml2.png" alt="Algorithm"></a>
           </div>
         </div>
 
@@ -207,8 +203,8 @@
           <h5 class="card-header">How to use it:</h5>
           <div class="card-body">
 
-            <p> The Clustering APP is an application that identifies Trends by running topic modelling over your CSV file.
-              The application is powered by GAE and uses Non-negative matrix factorization to perform clustering.</p>
+            <p> The Clustering APP is an application that identifies clusters by running topic modelling over your CSV file.
+              The application runs on Google Cloud and is powered by GAE and uses Non-negative matrix factorization to perform clustering.</p>
             <p>
               You can set the following ML parameters:
             <ul>
@@ -216,13 +212,14 @@
               <li>Number of words per cluster</li>
               <li>Number of features per cluster</li>
             </ul>
-            <p>This is an unsupervised ml approach. Hence, having back the probabilistic prediction of the ml model, we recommend to evaluate the results and extract the useful clusters.
-            <p><i>#Chris</i></p>
+            <p>This is an unsupervised ml approach built for educational purposes. Hence, we recommend to evaluate the prediction carefully.
+            <p><i>#Developer: Christoph Mittendorf</i></p>
           </div>
         </div>
 
       </div>
     </div>
+
 
     <!-- PROGRESS BAR -->
     <div class="box" id="loader_box" style="display:none; text-align:center;height:70px; margin:100px 0 100px 0">
@@ -265,7 +262,7 @@
       var encodedUri = encodeURI(csvContent);
       var link = document.createElement("a");
       link.setAttribute("href", encodedUri);
-      link.setAttribute("download", "yt_trends_data.csv");
+      link.setAttribute("download", "clustering_data.csv");
       document.body.appendChild(link); // Required for FF
 
       link.click();
@@ -297,13 +294,18 @@
       var explanation_card = document.getElementById("explanation_card");
       explanation_card.style.display = "none";
 
+      // Hide explanation card after button click
+      var algorithm_card = document.getElementById("algorithm_card");
+      algorithm_card.style.display = "none";
+
+
       // Unhide results heading
       var topics_header = document.getElementById("topics");
       topics_header.style.display = "block";
 
       // Number of ML Topics to identify
       var first_ml_parameter_input = document.getElementById("first_ml_parameter_input").value;
-      if (first_ml_parameter_input == "Number of Trends") {
+      if (first_ml_parameter_input == "Number of Clusters") {
         first_ml_parameter_input = 10;
       };
 
@@ -315,7 +317,7 @@
 
       // Number of ML Topics to identify
       var third_ml_parameter_input = document.getElementById("third_ml_parameter_input").value;
-      if (third_ml_parameter_input == "Number of Videos per Trend") {
+      if (third_ml_parameter_input == "Items per Cluster") {
         third_ml_parameter_input = 10;
       };
 
@@ -324,7 +326,6 @@
       third_ml_parameter_input = parseInt(third_ml_parameter_input);
 
       new_array_ms = [first_ml_parameter_input, second_ml_parameter_input, third_ml_parameter_input, full_text]
-      console.log(new_array_ms);
 
       //##################################################################################################
       // Transfer Function
@@ -332,16 +333,13 @@
 
       $.post("https://ml-clustering.ew.r.appspot.com/transfer", JSON.stringify(new_array_ms), function(response) {
 
-        console.log(response);
-        console.log(response.join());
-        console.log(response[0].join());
-        console.log(response[1].join());
+        console.log("Response" + response);
 
-        // length_topics = Number of TRENDS OVERALL
+        // length_topics = Number of Clusters OVERALL
         var length_topics = response[0].length;
-        // length_documents = Number of Videos OVERALL
+        // length_documents = Number of Items OVERALL
         var length_documents = response[1].length;
-        // no_documents = Number of Videos per TREND
+        // no_documents = Number of Items per Cluster
         var no_documents = third_ml_parameter_input;
 
         var current_topic = 0;
@@ -363,6 +361,7 @@
         document.getElementById('result_header').style.display = "block";
 
         for (l = current_topic; l < length_topics; l++) {
+          //Dream Div - Cluster Name / Heading
           var dream = document.createElement("div");
           dream.style.backgroundColor = "#007bff";
           dream.style.marginTop = "20px";
@@ -373,20 +372,22 @@
           para.style.paddingLeft = "20px";
           para.style.fontWeight = "bold";
 
-          var node = document.createTextNode(response[0][l]);
+          // Individual Documents per Trends
+          var node = document.createTextNode("CLUSTER " + (l + 1)+": " + response[0][l].replaceAll(",", ', ').toUpperCase());
 
           // For Downloading CSV
-          let str_a = "TREND ";
+          let str_a = "CLUSTER: ";
           let str_b = l + 1;
           let str_c = ": ";
           let str_d = (response[0][l]).toString();
-          let trend_head = str_a + str_b + str_c + str_d;
-          trend_head = trend_head.toUpperCase();
+          let cluster_head = str_a + str_b + str_c + str_d;
+          cluster_head = cluster_head.toUpperCase();
 
-          combined_array.push([trend_head]);
+          combined_array.push([cluster_head]);
 
           para.appendChild(node);
           dream.appendChild(para);
+          //dream.appendChild("CLUSTER: " +para);
 
           var element = document.getElementById("result_container");
           element.appendChild(dream);
@@ -398,35 +399,25 @@
             var li = document.createElement("li");
             li.style.padding = "0 0 0 20px";
 
-            var node = document.createTextNode(response[1][i]);
-
-            // Adding HREF Link to Videos
-            var a = document.createElement('a');
-            a.title = "Video Link";
-            a.appendChild(node);
-            let str1 = "https://www.youtube.com/results?search_query=";
-            let str2 = (response[1][i]).toString();
-            let res = str1.concat(str2);
-            a.href = res;
-            a.setAttribute('target', '_blank');
-
+            var node = document.createTextNode(response[1][i].replaceAll(",", ', '));
 
             // For Downloading CSV
             //Escape Response
-            video_string = response[1][i].toString();
-            video_string = video_string.replaceAll("#", '-');
+            item_string = response[1][i].toString();
+            item_string = item_string.replaceAll("#", '-');
+            item_string = item_string.replaceAll(",", ', ');
             combined_array.push([
-              [video_string]
+              [item_string]
             ]);
 
-            li.appendChild(a);
+            li.appendChild(node);
             var element = document.getElementById("result_container");
             element.appendChild(li);
             current_document = current_document + 1;
 
           }
 
-          // Adding - Empty Row Between Trends
+          // Adding - Empty Row Between Clusters
           combined_array.push([
             []
           ]);
@@ -438,12 +429,11 @@
     };
   </script>
 
+
   <!-- Footer -->
-  <footer class="py-5 bg-dark" style="margin-top:20px; bottom: 0;
-   width: 100%;">
-    <div class="container">
-      <p class="m-0 text-center text-white">Clustering-APP - 2021</p>
-    </div>
+  <footer class="py-5 bg-light" style="margin-top:20px; bottom: 0; width: 100%;">
+      <p class="m-0 text-center text-black">Mittendorf - Clustering-APP - 2021</p>
   </footer>
 
 </body>
+</html>
