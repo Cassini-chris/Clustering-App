@@ -1,4 +1,7 @@
 var full_text = [];
+var table = [];
+var rows = [];
+var cells = [];
 
 
 function handleFiles(files) {
@@ -22,8 +25,38 @@ function getAsText(fileToRead) {
 
 function loadHandler(event) {
   var csv = event.target.result;
-  processData(csv);
-}
+
+
+  var heading_table = document.createElement("h5");
+  var table = document.createElement("table");
+  var rows = event.target.result.split("\n");
+  for (var i = 0; i < rows.length; i++) {
+      var cells = rows[i].split(",");
+    //  alert("Cell: " + cells);
+          //  alert(cells.length);
+      if (cells.length >= 1) {
+
+          var row = table.insertRow(-1);
+        if (i < 5)  {
+            //  alert("Row: " + row);
+          for (var j = 0; j < cells.length; j++) {
+              var cell = row.insertCell(-1);
+              cell.innerHTML = cells[j];
+
+          }
+        }
+
+
+      }
+  }
+  var dvCSV = document.getElementById("dvCSV");
+  dvCSV.innerHTML = "";
+  heading_table.innerHTML = "Table Snapshot - 5 Rows";
+  dvCSV.appendChild(heading_table);
+  dvCSV.appendChild(table);
+  table.setAttribute("class", "table table-dark");
+  table.setAttribute('id', 'output_table');
+  processData(csv);}
 
 function processData(csv) {
     var allTextLines = csv.split(/\r\n|\n/);
@@ -37,13 +70,10 @@ function processData(csv) {
             lines.push(tarr);
     }
   console.log(lines);
-    alert(lines);
+    //alert(lines);
     full_text= lines;
     var run_button = document.getElementById('run_button');
     run_button.style.display = 'block';
-
-
-
 
 
 
