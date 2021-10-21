@@ -3,11 +3,9 @@ from flask import request
 from flask import render_template
 from flask import jsonify
 
-import numpy as np
-import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.decomposition import NMF
 
-from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
-from sklearn.decomposition import NMF, LatentDirichletAllocation
 
 def display_topics(H, W, feature_names, documents, no_top_words, no_top_documents):
 
@@ -68,24 +66,19 @@ def transfer():
     except:
       print(l)
 
-  print("Testing Point: a")
-  documents = rock_list2
+  # documents = rock_list2
   print("Rock_List 2: ", rock_list2)
 
   # NMF is able to use tf-idf
-  tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2)
-  print("Testing Point: b")
+  tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, stop_words='english')
   tfidf = tfidf_vectorizer.fit_transform(rock_list2)
-  print("Testing Point: c")
   tfidf_feature_names = tfidf_vectorizer.get_feature_names()
-  print("Testing Point: d")
 
   # Run NMF
   try:
     nmf_model = NMF(n_components=no_topics, random_state=1, alpha=.1, l1_ratio=.5, init='nndsvd').fit(tfidf)
     nmf_W = nmf_model.transform(tfidf)
     nmf_H = nmf_model.components_
-    print("2")
 
     # Run Dimensionality reduction using Non-Negative Matrix Factorization
     display_topics(nmf_H, nmf_W, tfidf_feature_names, rock_list, no_top_words, no_top_documents)
@@ -105,5 +98,5 @@ def transfer():
 
   return response
 
-if __name__ == '__main__':
- absl_app.run(main)
+# if __name__ == '__main__':
+#  absl_app.run(main)
