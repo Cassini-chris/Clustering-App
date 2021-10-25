@@ -5,7 +5,13 @@ var cells = [];
 
 
 function handleFiles(files) {
-  // Check for the various File API support.
+  // Max Size Upload
+  if(files[0].size > 10971520){
+     alert("File is too big! Max size: 10MB.");
+     return;
+  };
+
+
   if (window.FileReader) {
       // FileReader are supported.
       getAsText(files[0]);
@@ -69,7 +75,7 @@ function processData(csv) {
             }
             lines.push(tarr);
     }
-  console.log(lines);
+    //console.log(lines);
     //alert(lines);
     full_text= lines;
     var run_button = document.getElementById('run_button');
