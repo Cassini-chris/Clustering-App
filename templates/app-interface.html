@@ -1,3 +1,5 @@
+!<!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,7 +21,6 @@
   <link rel="icon" type="image/png" sizes="16x16" href="../static/fav/favicon-16x16.png">
   <link rel="manifest" href="../static/fav/site.webmanifest">
 
-
   <!-- Custom font -->
   <link href="https://fonts.googleapis.com/css?family=Assistant|Cabin|Indie+Flower|Muli|Nunito&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../static/style.css">
@@ -27,25 +28,36 @@
   <!-- JQuery -->
   <script src="https://code.jquery.com/jquery-latest.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NPVEVDHBKC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-NPVEVDHBKC');
+</script>
+
 </head>
 
 <body>
-
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
 
-      <a href="https://ml-clustering.ew.r.appspot.com/">
+      <a  class="navbar-brand" href="https://ml-clustering.ew.r.appspot.com/">
         <img id="logo" style="width:30px !important; height:30px !important" src="../static/images/logo.png" alt="">
       </a>
-      <a style="padding-left:7px" class="navbar-brand" href="">Clustering APP (BETA Version - powered by Google App Engine)</a>
 
-          <img id="" style="width:40px !important; height:40px !important" src="https://fonts.gstatic.com/s/i/productlogos/google_cloud/v7/192px.svg" alt="">
-              <img id="logo" style="width:40px !important; height:40px !important" src="../static/images/app_engine.png" alt="">
-              <span>)</span>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      </button>
+      <a style="padding-left:7px; text-align:left" class="navbar-brand" href="">Clustering APP</a></br>
+      <a style="padding-left:7px" class="navbar-brand mobile" href="">(powered by Google App Engine)</a></br></br>
+
+          <img id="logo mobile" style="width:40px !important; height:40px !important" src="https://fonts.gstatic.com/s/i/productlogos/google_cloud/v7/192px.svg" alt="Google Cloud">
+          <img id="logo mobile" style="width:40px !important; height:40px !important" src="../static/images/app_engine.png" alt="Google App Engine">
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
@@ -53,23 +65,23 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" id="about" href="#" onclick="aboutFunction()">About</a>
-  <script> function aboutFunction() {alert("Developer:  Dr. Christoph Mittendorf \nLocation:  Munich, Germany \nInternet:  http://www.ml-models.de \nE-Mail:  hello@epicml.net");}</script>
+                <script> function aboutFunction()
+                          {alert("Developer:  Dr. Christoph Mittendorf \nLocation:  Munich, Germany \nInternet:  http://www.ml-models.de \nE-Mail:  hello@epicml.net");}
+                </script>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="bd-pageheader text-center text-sm-left" style="background-color: #007eff; height:140px; color: white">
+  <div class="bd-pageheader text-center text-sm-left" style="background-color:#007eff; height:auto; color:white">
     <div class="container">
-      <!-- Title Content ---------------------------------------------------------------------------------------------------------->
-      <h1 id="heading_big" style="font-weight: bold">Clustering App
-        <img style="width:80px; margin-bottom:20px" src="../static/images/logo.png" alt="">
-        <small> (CSV Explorer)</small>
+      <h1 id="heading_big" style="font-weight: bold; padding-top:22px; padding-bottom:4px">Clustering App
+        <img class="mobile" style="width:80px; margin-bottom:20px" src="../static/images/logo.png" alt="">
+        <small class="mobile"> (CSV Explorer)</small>
       </h1>
     </div>
   </div>
-
 
   <!-- Page Content -->
   <div class="container" style="padding-top:30px">
@@ -125,33 +137,29 @@
               for (let i = 1; i <= 100; i++) {
             if (i==10){contents += "<option selected>" + i + "</option>";}
             else{contents += "<option>" + i + "</option>";}
-          };
+           };
             selectClusters.innerHTML = contents;
           </script>
 
 
           <div class="card-footer text-muted">
-          <span> Please input the ml model parameters via the dropdown menus.</span> </br>
-          <span style="font-size:12px">* The number of clusters that will be extracted by the ML model</span> </br>
-          <span style="font-size:12px">** The number of words that will describe the cluster</span> </br>
-          <span style="font-size:12px">*** Number of Items that will be extracted per cluster</span>
+            <span> Please input the ml model parameters via the dropdown menus.</span> </br>
+            <span style="font-size:12px">* The number of clusters that will be extracted by the ML model</span> </br>
+            <span style="font-size:12px">** The number of words that will describe the cluster</span> </br>
+            <span style="font-size:12px">*** Number of Items that will be extracted per cluster</span>
           </div>
         </div>
 
         <div style="margin-bottom:10px"><a href="https://storage.googleapis.com/public-ml-data-bucket/dummy_healthcare_data.csv">Download Dummy CSV File</a> </div>
-
 
         <div>
          <script type="text/javascript" src="../static/csv_reader.js"></script>
          <input class="custom-file-upload " type="file" id="csvFileInput" onchange="handleFiles(this.files)" accept=".csv">
         </div>
 
-
     <div id="dvCSV"></div>
 
 <button id="run_button" style="margin-bottom: 25px; display:none" type="button" class="btn btn-primary" onclick="run_model();">Run analysis</button>
-
-
 </div>
 
       <!-- Sidebar Widgets Column -->
@@ -273,7 +281,7 @@
   <script>
     // Introduce message:
     let message = "Message introduced - setting 10 as standard";
-    console.log(message);
+    //console.log(message);
     message = 10;
     var new_array_ms = [10, 10, 10];
     var response_for_download = [];
@@ -333,7 +341,7 @@
 
       $.post("https://ml-clustering.ew.r.appspot.com/transfer", JSON.stringify(new_array_ms), function(response) {
 
-        console.log("Response" + response);
+        //console.log("Response" + response);
 
         // length_topics = Number of Clusters OVERALL
         var length_topics = response[0].length;
@@ -431,8 +439,11 @@
 
 
   <!-- Footer -->
-  <footer class="py-5 bg-light" style="margin-top:20px; bottom: 0; width: 100%;">
+  <footer class="py-5 bg-light" style="margin-top:20px; bottom: 0; width: 100%; padding-bottom:20px !important " >
       <p class="m-0 text-center text-black">Mittendorf - Clustering-APP - 2021</p>
+      <div style="text-align:center; margin-top:10px ">
+        <span style="text-align:center; font-size:10px"> Disclaimer: This is not an officially supported Google product</span>
+      </div>
   </footer>
 
 </body>
