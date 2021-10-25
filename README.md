@@ -24,3 +24,4 @@ the repo does hold the following:
 - [X] A dummy_data folder (that holds a CSV example file)
 
 
+Disclaimer: This is not an officially supported Google product
